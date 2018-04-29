@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cloudnatived
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cloudnatived
+    spec:
+      containers:
+        - name: cloudnatived
+          image: cloudnatived/cloudnatived:hello
+          ports:
+          - containerPort: 8080

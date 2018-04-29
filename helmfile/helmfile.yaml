@@ -1,0 +1,19 @@
+repositories:
+
+  - name: stable
+    url: https://kubernetes-charts.storage.googleapis.com/
+
+  - name: cloudnativedevops
+    url: https://raw.githubusercontent.com/cloudnativedevops/cloudnatived/master/helm/k8s/cloudnatived
+
+# context:
+
+releases:
+
+  - name: prometheus
+    namespace: default
+    chart: stable/prometheus
+
+  - name: cloudnatived
+    namespace: default
+    chart: cloudnativedevops/cloudnatived
