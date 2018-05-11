@@ -7,10 +7,10 @@ spec:
   template:
     metadata:
       labels:
-        app: cloudnatived
+        app: demo
     spec:
       containers:
-        - name: cloudnatived
-          image: cloudnatived/cloudnatived:hello
+        - name: demo
+          image: cloudnatived/demo:hello
           ports:
           - containerPort: 8080
