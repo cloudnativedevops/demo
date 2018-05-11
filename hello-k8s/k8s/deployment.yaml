@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: cloudnatived
+  name: demo
 spec:
   replicas: 1
   template:
