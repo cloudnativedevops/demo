@@ -1,0 +1,7 @@
+environment: development
+container:
+  name: demo
+  port: 8080
+  repo: cloudnatived
+  tag: latest
+replicas: 1

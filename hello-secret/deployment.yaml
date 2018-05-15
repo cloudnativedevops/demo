@@ -1,25 +1,19 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: cloudnatived
+  name: demo
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: cloudnatived
+        app: demo
     spec:
       containers:
-        - name: cloudnatived
-          image: cloudnatived/cloudnatived:hello-secret
+        - name: demo
+          image: cloudnatived/demo:hello-secret
           ports:
             - containerPort: 8080
-          env:
-            - name: GREETING
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: greeting
           volumeMounts:
             - name: secret_name
               mountPath: "/opt/"

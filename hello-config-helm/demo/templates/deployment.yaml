@@ -2,7 +2,6 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: {{ .Values.container.name }}
-  namespace: {{ .Values.environment }}-{{ .Values.container.name }}
 spec:
   replicas: {{ .Values.replicas }}
   template:
@@ -22,8 +21,3 @@ spec:
                 configMapKeyRef:
                   name: {{ .Values.container.name }}-config
                   key: greeting
-            - name: SECRET_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: {{ .Values.container.name }}-secrets
-                  key: secret_name

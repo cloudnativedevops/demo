@@ -1,9 +1,0 @@
-environment: demo
-container:
-  name: cloudnatived
-  port: 8080
-  repo: cloudnatived
-  tag: latest
-greeting: Hello
-secret_name: SnVzdGluCg==
-replicas: 1
