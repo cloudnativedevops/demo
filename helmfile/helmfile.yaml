@@ -1,0 +1,21 @@
+repositories:
+
+  - name: cloudnativedevops
+    url: https://raw.githubusercontent.com/cloudnativedevops/cloudnatived/master/hello-helm/
+
+releases:
+
+  - name: production-demo
+    namespace: production-demo
+    chart: cloudnativedevops/demo
+
+  - name: production-demo
+    namespace: production-demo
+    chart: cloudnativedevops/demo
+
+  - name: staging-demo
+    namespace: staging-demo
+    chart: cloudnativedevops/demo
+    set:
+      - name: environment
+        value: staging

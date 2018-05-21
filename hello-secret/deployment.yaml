@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: demo
+    spec:
+      containers:
+        - name: demo
+          image: cloudnatived/demo:hello-secret
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: secret_name
+              mountPath: "/opt/"
+              readOnly: true
+      volumes:
+        - name: secret_name
+          secret:
+            secretName: app-secrets

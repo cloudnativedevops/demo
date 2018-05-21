@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  demo:
+  - created: 2018-05-16T07:42:43.805093924-07:00
+    digest: cbbe1c81ac068b384bd66da8edc08d677c2c824abde2d93e953160fae07fcbf5
+    name: demo
+    sources:
+    - https://github.com/cloudnativedevops/cloudnatived
+    urls:
+    - demo-1.0.0.tgz
+    version: 1.0.0
+generated: 2018-05-16T07:42:43.804764833-07:00
