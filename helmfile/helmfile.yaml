@@ -1,7 +1,7 @@
 repositories:
 
   - name: cloudnativedevops
-    url: https://raw.githubusercontent.com/cloudnativedevops/cloudnatived/master/hello-helm/
+    url: https://raw.githubusercontent.com/cloudnativedevops/demo/master/hello-helm/
 
 releases:
 

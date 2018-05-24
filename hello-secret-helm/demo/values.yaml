@@ -2,6 +2,6 @@ environment: production
 container:
   name: demo
   port: 8080
-  repo: cloudnatived
+  image: cloudnatived/demo
   tag: latest
 replicas: 1
