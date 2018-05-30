@@ -1,9 +1,6 @@
-resource "aws_instance" "vm1" {
-  ami           = "ami-efd0428f"
-  instance_type = "t2.micro"
-  key_name      = "${var.key_name}"
+provider "aws" {}
 
-  tags {
-    Name = "demo"
-  }
+resource "aws_instance" "vm1" {
+  ami           = "ami-b6e499ce"
+  instance_type = "t2.micro"
 }
