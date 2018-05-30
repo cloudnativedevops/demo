@@ -1,4 +1,4 @@
-FROM golang:1.10.1-alpine3.7 AS build
+FROM golang:1.10.2-alpine3.7 AS build
 
 WORKDIR /go/src/github.com/cloudnativedevops/demo/
 COPY main.go /go/src/github.com/cloudnativedevops/demo/
