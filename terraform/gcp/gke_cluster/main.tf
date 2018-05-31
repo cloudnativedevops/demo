@@ -1,11 +1,3 @@
-terraform {
-  backend "gcs" {
-    bucket = "cloudnativedevops-terraform-state"
-    prefix = "terraform/state"
-    region = "us-west1"
-  }
-}
-
 variable "gce_region" {
   default = "us-west1"
 }
