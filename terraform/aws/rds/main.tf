@@ -5,7 +5,8 @@ resource "aws_s3_bucket" "bucket" {
   acl    = "private"
 
   tags {
-    Name = "${var.name}"
+    App         = "${var.name}"
+    Environment = "${var.Environment}"
   }
 }
 
@@ -16,4 +17,9 @@ resource "aws_rds_cluster" "db" {
   master_username     = "foo"
   master_password     = "change-me-please"
   skip_final_snapshot = true
+
+  tags {
+    App         = "${var.name}"
+    Environment = "${var.Environment}"
+  }
 }

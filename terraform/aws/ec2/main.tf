@@ -1,11 +1,11 @@
 provider "aws" {}
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = "${var.environment}-justind-cloudnativedevops-${var.name}-bucket"
+  bucket = "${var.environment}-<YOUR_NAME>-cloudnativedevops-${var.name}-bucket"
   acl    = "private"
 
   tags {
-    Name       = "${var.name}"
+    App        = "${var.name}"
     Environent = "${var.environment}"
   }
 }
@@ -19,7 +19,7 @@ resource "aws_rds_cluster" "db" {
   skip_final_snapshot = true
 
   tags {
-    Name       = "${var.name}"
+    App        = "${var.name}"
     Environent = "${var.environment}"
   }
 }
@@ -29,7 +29,8 @@ resource "aws_instance" "vm" {
   instance_type = "t2.micro"
 
   tags {
-    Name       = "${var.environment}-${var.name}"
+    App        = "${var.name}"
     Environent = "${var.environment}"
+    Name       = "${var.environment}-${var.name}"
   }
 }
