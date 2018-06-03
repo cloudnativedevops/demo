@@ -1,62 +1,25 @@
-variable "gce_region" {
-  default = "us-west1"
-}
+provider "google" {}
 
-variable "project" {
-  default = "YOUR-GCP-PROJECT-ID"
-}
+resource "google_storage_bucket" "bucket" {
+  name = "${var.environment}-<YOUR_NAME>-cloudnativedevops-${var.name}-bucket"
 
-variable "network" {
-  default = "network"
-}
-
-provider "google" {
-  project = "${var.project}"
-  region  = "${var.gce_region}"
-}
-
-resource "google_compute_network" "network" {
-  name                    = "${var.network}"
-  auto_create_subnetworks = "false"
-
-  lifecycle {
-    prevent_destroy = true
+  labels {
+    app         = "${var.name}"
+    environment = "${var.environment}"
   }
 }
 
-resource "google_compute_subnetwork" "subnet-10" {
-  name                     = "subnet-10"
-  ip_cidr_range            = "192.168.10.0/24"
-  network                  = "${google_compute_network.network.self_link}"
-  region                   = "us-west1"
-  private_ip_google_access = true
+resource "google_sql_database_instance" "db" {
+  name             = "${var.environment}-cloudnativedevops-${var.name}-db"
+  database_version = "POSTGRES_9_6"
 
-  lifecycle {
-    prevent_destroy = true
+  settings {
+    tier = "db-f1-micro"
   }
 }
 
-resource "google_container_cluster" "cloudnativedevops" {
-  name               = "cloudnativedevops"
-  zone               = "${var.gce_region}-a"
-  initial_node_count = 0
-  enable_legacy_abac = false
-  network            = "${var.network}"
-
-  lifecycle {
-    prevent_destroy = true
-
-    ignore_changes = [
-      "node_config.oauth_scopes",
-      "ip_allocation_policy",
-      "master_authorized_networks_config",
-    ]
-  }
-}
-
-resource "google_container_node_pool" "pool-1" {
-  name       = "pool-1"
-  zone       = "${var.gce_region}-a"
-  cluster    = "${google_container_cluster.cloudnativedevops.name}"
-  node_count = 1
+resource "google_container_cluster" "k8s-cluster" {
+  name               = "${var.environment}-cloudnativedevops-${var.name}-k8s-cluster"
+  initial_node_count = "${var.initial_node_count}"
+  zone               = "${var.zone}"
 }
