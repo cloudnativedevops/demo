@@ -1,13 +1,19 @@
 provider "aws" {}
 
-resource "aws_rds_cluster" "default" {
-  cluster_identifier      = "cloudnativedevops-rds-cluster-demo"
-  engine                  = "aurora-postgresql"
-  availability_zones      = ["us-west-2a", "us-west-2b", "us-west-2c"]
-  database_name           = "demo"
-  master_username         = "foo"
-  master_password         = "change-me-please"
-  backup_retention_period = 5
-  preferred_backup_window = "07:00-09:00"
-  skip_final_snapshot     = true
+resource "aws_s3_bucket" "bucket" {
+  bucket = "<YOUR_NAME>-cloudnativedevops-${var.name}-bucket"
+  acl    = "private"
+
+  tags {
+    Name = "${var.name}"
+  }
+}
+
+resource "aws_rds_cluster" "db" {
+  cluster_identifier  = "cloudnativedevops-${var.name}-rds-cluster"
+  engine              = "aurora-postgresql"
+  database_name       = "${var.name}"
+  master_username     = "foo"
+  master_password     = "change-me-please"
+  skip_final_snapshot = true
 }
