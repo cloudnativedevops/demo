@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ .Values.container.name }}
+  name: {{ .Values.container.name }}-{{ .Values.environment }}
 spec:
   replicas: {{ .Values.replicas }}
   template:
