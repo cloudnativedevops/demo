@@ -7,7 +7,7 @@ spec:
   template:
     metadata:
       labels:
-        app: demo
+        run: demo
     spec:
       containers:
         - name:  demo
