@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: demo
   labels:
-    run: demo
+    app: demo
 spec:
   ports:
   - port: 8080
     protocol: TCP
     targetPort: 8080
   selector:
-    run: demo
+    app: demo
   type: ClusterIP

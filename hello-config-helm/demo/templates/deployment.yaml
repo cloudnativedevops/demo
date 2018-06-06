@@ -4,6 +4,9 @@ metadata:
   name: {{ .Values.container.name }}
 spec:
   replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.container.name }}
   template:
     metadata:
       labels:
