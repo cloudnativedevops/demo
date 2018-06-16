@@ -5,3 +5,7 @@ variable "name" {
 variable "environment" {
   default = "test"
 }
+
+variable "your_name" {
+  default = "sally"
+}
