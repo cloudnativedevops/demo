@@ -1,2 +1,5 @@
 demo
 *.swp
+.terraform*
+*.tfstate*
+
