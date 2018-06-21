@@ -1,7 +1,0 @@
-environment: dev
-container:
-  name: demo
-  port: 8080
-  image: cloudnatived/demo
-  tag: hello
-replicas: 1
