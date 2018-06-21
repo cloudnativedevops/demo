@@ -16,7 +16,7 @@ spec:
         - name: demo
           image: cloudnatived/demo:hello
           ports:
-          - containerPort: 8080
+          - containerPort: 8888
           resources:
             requests:
               memory: "10Mi"
@@ -27,12 +27,12 @@ spec:
           livenessProbe:
             httpGet:
               path: /
-              port: 8080
+              port: 8888
             initialDelaySeconds: 3
             periodSeconds: 3
           readinessProbe:
             httpGet:
               path: /
-              port: 8080
+              port: 8888
             initialDelaySeconds: 3
             periodSeconds: 3

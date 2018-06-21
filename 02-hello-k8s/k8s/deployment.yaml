@@ -18,4 +18,4 @@ spec:
         - name: demo
           image: cloudnatived/demo:hello
           ports:
-          - containerPort: 8080
+          - containerPort: 8888

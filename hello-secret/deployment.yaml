@@ -16,7 +16,7 @@ spec:
         - name: demo
           image: cloudnatived/demo:hello-secret
           ports:
-            - containerPort: 8080
+            - containerPort: 8888
           volumeMounts:
             - name: secret_name
               mountPath: "/opt/"

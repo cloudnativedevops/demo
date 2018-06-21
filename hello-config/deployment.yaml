@@ -16,7 +16,7 @@ spec:
         - name:  demo
           image: cloudnatived/demo:hello-config
           ports:
-            - containerPort: 8080
+            - containerPort: 8888
           env:
             - name: GREETING
               valueFrom:
