@@ -1,21 +1,21 @@
 repositories:
-
-  - name: cloudnativedevops
-    url: https://raw.githubusercontent.com/cloudnativedevops/demo/master/hello-helm/
+  - name: stable
+    url: https://kubernetes-charts.storage.googleapis.com/
 
 releases:
+  - name: demo
+    namespace: demo
+    chart: ../03-hello-helm/k8s/demo
+    values:
+      - "../03-hello-helm/k8s/demo/production-values.yaml"
 
-  - name: production-demo
-    namespace: production-demo
-    chart: cloudnativedevops/demo
+  - name: kube-state-metrics
+    namespace: kube-state-metrics
+    chart: stable/kube-state-metrics
 
-  - name: production-demo
-    namespace: production-demo
-    chart: cloudnativedevops/demo
-
-  - name: staging-demo
-    namespace: staging-demo
-    chart: cloudnativedevops/demo
+  - name: prometheus
+    namespace: prometheus
+    chart: stable/prometheus
     set:
-      - name: environment
-        value: staging
+      - name: rbac.create
+        value: true
