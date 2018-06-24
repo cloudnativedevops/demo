@@ -1,4 +1,3 @@
-demo
 *.swp
 .terraform*
 *.tfstate*
