@@ -1,0 +1,11 @@
+workspace:
+  base: /go
+  path: src/github.com/cloudnativedevops/demo
+
+pipeline:
+  build:
+    image: golang:latest
+    commands:
+      - go get ./...
+      - go test
+      - go build
