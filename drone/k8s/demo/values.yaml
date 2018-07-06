@@ -1,0 +1,7 @@
+environment: development
+container:
+  name: demo
+  port: 8888
+  image: cloudnatived/demo
+  tag: hello
+replicas: 1

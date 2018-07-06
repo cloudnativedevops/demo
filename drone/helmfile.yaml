@@ -1,0 +1,25 @@
+repositories:
+  - name: stable
+    url: https://kubernetes-charts.storage.googleapis.com/
+
+releases:
+  - name: demo
+    namespace: demo
+    chart: ./k8s/demo
+
+  - name: drone
+    namespace: drone
+    chart: stable/drone
+    set:
+      - name: server.env.DRONE_OPEN
+        value: "true"
+      - name: server.env.DRONE_PROVIDER
+        value: "github"
+      - name: server.env.DRONE_GITHUB
+        value: "true"
+      - name: server.env.DRONE_GITHUB_CLIENT
+        value: "YOUR_GITHUB_CLIENT_SECRET"
+      - name: server.env.DRONE_ADMIN
+        value: "YOUR_GITHUB_USERNAME"
+      - name: server.env.DRONE_GITHUB_SECRET
+        value: "YOUR_GITHUB_CLIENT_SECRET"
