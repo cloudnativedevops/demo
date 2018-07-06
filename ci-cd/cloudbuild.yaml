@@ -28,5 +28,14 @@ steps:
       - |
         docker run demo:test go test
 
+  - id: kubeval
+    dir: ci-cd
+    name: garethr/kubeval
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        helm template ./k8s/demo/ | kubeval
+
 images:
   - gcr.io/${PROJECT_ID}/demo:${COMMIT_SHA}
