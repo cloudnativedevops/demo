@@ -1,0 +1,41 @@
+steps:
+
+    # build only the first stage, so we can run tests with it
+  - id: build-test-image
+    dir: ci-cd
+    name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        docker build --target build --tag demo:test .
+
+  - id: build-app
+    dir: ci-cd
+    name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        docker build --tag gcr.io/${PROJECT_ID}/demo:${COMMIT_SHA} .
+
+  - id: run-tests
+    dir: ci-cd
+    name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        docker run demo:test go test
+
+  - id: kubeval
+    dir: ci-cd
+    name: garethr/kubeval
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        helm template ./k8s/demo/ | kubeval
+
+images:
+  - gcr.io/${PROJECT_ID}/demo:${COMMIT_SHA}
