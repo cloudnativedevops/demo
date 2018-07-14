@@ -18,10 +18,10 @@ spec:
           ports:
             - containerPort: 8888
           volumeMounts:
-            - name: secret_name
-              mountPath: "/opt/"
+            - name: demo-secrets
+              mountPath: "/secrets/"
               readOnly: true
       volumes:
-        - name: secret_name
+        - name: demo-secrets
           secret:
-            secretName: app-secrets
+            secretName: demo-secrets
