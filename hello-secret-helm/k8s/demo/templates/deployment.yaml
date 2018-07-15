@@ -18,8 +18,11 @@ spec:
           image: {{ .Values.container.image }}:{{ .Values.container.tag }}
           ports:
             - containerPort: {{ .Values.container.port }}
-            - name: SECRET_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: {{ .Values.container.name }}-secrets
-                  key: secret_name
+          volumeMounts:
+            - name: {{ .Values.appName }}-secrets
+              mountPath: /{{ .Values.environment }}-secrets.yaml
+              readOnly: true
+      volumes:
+        - name: {{ .Values.container.name }}-secrets
+          secret:
+            secretName: {{ .Values.container.name }}-secrets-{{ .Release.Revision }}

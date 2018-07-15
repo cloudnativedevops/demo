@@ -1,7 +1,7 @@
-environment: production
+environment: development
 container:
   name: demo
   port: 8080
   image: cloudnatived/demo
-  tag: latest
+  tag: hello-secret
 replicas: 1
