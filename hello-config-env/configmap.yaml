@@ -1,6 +1,6 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: app-config
+  name: demo-config
 data:
-  greeting: Hello
+  greeting: Hola

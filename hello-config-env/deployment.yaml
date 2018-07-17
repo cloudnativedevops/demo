@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
         - name:  demo
-          image: cloudnatived/demo:hello-config
+          image: cloudnatived/demo:hello-config-env
           ports:
             - containerPort: 8888
           env:
             - name: GREETING
               valueFrom:
                 configMapKeyRef:
-                  name: app-config
+                  name: demo-config
                   key: greeting
