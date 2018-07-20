@@ -18,10 +18,10 @@ spec:
           ports:
             - containerPort: 8888
           volumeMounts:
-            - name: demo-secrets
+            - name: demo-secret-volume
               mountPath: "/secrets/"
               readOnly: true
       volumes:
-        - name: demo-secrets
+        - name: demo-secret-volume
           secret:
-            secretName: demo-secrets
+            secretName: demo-secret
