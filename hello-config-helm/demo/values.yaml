@@ -1,7 +1,0 @@
-environment: production
-container:
-  name: demo
-  port: 8080
-  image: cloudnatived/demo
-  tag: latest
-replicas: 1
