@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Values.container.name }}
+spec:
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.container.name }}
+        environment: {{ .Values.environment }}
+    spec:
+      containers:
+        - name: {{ .Values.container.name }}
+          image: {{ .Values.container.image }}:{{ .Values.container.tag }}
+          volumeMounts:
+            - name: {{ .Values.container.name }}-secret-volume
+              mountPath: "/secrets/"
+              readOnly: true
+      volumes:
+        - name: {{ .Values.container.name }}-secret-volume
+          secret:
+            secretName: {{ .Values.container.name }}-secrets
