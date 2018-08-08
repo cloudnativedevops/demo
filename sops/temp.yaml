@@ -1,0 +1,11 @@
+secret_one: staging_one
+secret_two: staging_two
+secret_three: staging_three
+list_one:
+-   one: foo
+-   two: bar
+-   three: baz
+list_two:
+-   four: foo
+-   five: bar
+-   six: baz
