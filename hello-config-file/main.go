@@ -9,7 +9,7 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-const cfgPath = "/demo-config.yaml"
+const cfgPath = "/config/demo.yaml"
 
 var config struct {
 	Greeting string

@@ -14,14 +14,12 @@ spec:
     spec:
       containers:
         - name: demo
-          image: cloudnatived/demo:hello-secret
+          image: cloudnatived/demo:hello-secret-env
           ports:
             - containerPort: 8888
-          volumeMounts:
-            - name: demo-secret-volume
-              mountPath: "/secrets/"
-              readOnly: true
-      volumes:
-        - name: demo-secret-volume
-          secret:
-            secretName: demo-secret
+          env:
+            - name: MAGIC_WORD
+              valueFrom:
+                secretKeyRef:
+                  name: demo-secret
+                  key: magicWord

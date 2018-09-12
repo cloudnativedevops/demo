@@ -1,7 +1,7 @@
-FROM golang:1.10.2-alpine3.7 AS build
+FROM golang:1.11-alpine AS build
 
-WORKDIR /go/src/github.com/cloudnativedevops/demo/
-COPY main.go /go/src/github.com/cloudnativedevops/demo/
+WORKDIR /src/
+COPY main.go go.* /src/
 RUN CGO_ENABLED=0 go build -o /bin/demo
 
 FROM scratch

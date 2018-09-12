@@ -18,11 +18,13 @@ spec:
           ports:
             - containerPort: 8888
           volumeMounts:
-          - mountPath: /
+          - mountPath: /config/
             name: demo-config-volume
-            subPath: demo-config.yaml
             readOnly: true
       volumes:
       - name: demo-config-volume
         configMap:
           name: demo-config
+          items:
+          - key: config
+            path: demo.yaml
