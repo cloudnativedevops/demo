@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: {{ .Values.container.name }}
-          image: {{ .Values.image }}
+          image: {{ .Values.container.image }}:{{ .Values.container.tag }}
           ports:
             - containerPort: {{ .Values.container.port }}
           env:
