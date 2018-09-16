@@ -30,8 +30,8 @@ steps:
 
   - id: kubeval
     dir: ci-cd
-    name: garethr/kubeval
-    entrypoint: bash
+    name: cloudnatived/helm-cloudbuilder
+    entrypoint: sh
     args:
       - -c
       - |
