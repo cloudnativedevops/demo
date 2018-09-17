@@ -36,5 +36,7 @@ steps:
       - --values
       - k8s/demo/${TAG_NAME}-values.yaml
       - --set
+      - container.image=gcr.io/${PROJECT_ID}/demo
+      - --set
       - container.tag=${COMMIT_SHA}
       - ./k8s/demo
