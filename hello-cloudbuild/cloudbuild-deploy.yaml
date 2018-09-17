@@ -36,5 +36,5 @@ steps:
       - --values
       - k8s/demo/${TAG_NAME}-values.yaml
       - --set
-      - image.tag=${COMMIT_SHA}
+      - container.tag=${COMMIT_SHA}
       - ./k8s/demo
