@@ -1,5 +1,7 @@
 FROM golang:1.11-alpine AS build
 
+RUN apk add --update --no-cache gcc git build-base
+
 WORKDIR /src/
 COPY main*.go go.* /src/
 RUN CGO_ENABLED=0 go build -o /bin/demo
