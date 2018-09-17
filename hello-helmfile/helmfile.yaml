@@ -5,9 +5,9 @@ repositories:
 releases:
   - name: demo
     namespace: demo
-    chart: ../03-hello-helm/k8s/demo
+    chart: ../hello-helm/k8s/demo
     values:
-      - "../03-hello-helm/k8s/demo/production-values.yaml"
+      - "../hello-helm/k8s/demo/production-values.yaml"
 
   - name: kube-state-metrics
     namespace: kube-state-metrics
