@@ -1,7 +1,7 @@
 steps:
 
   - id: get-kube-config
-    dir: ci-cd
+    dir: hello-cloudbuild
     name: gcr.io/cloud-builders/kubectl
     env:
     - CLOUDSDK_CORE_PROJECT=${_CLOUDSDK_CORE_PROJECT}
@@ -12,7 +12,7 @@ steps:
        - cluster-info
 
   - id: update-deploy-tag
-    dir: ci-cd
+    dir: hello-cloudbuild
     name: gcr.io/cloud-builders/gcloud
     args:
       - container
@@ -23,7 +23,7 @@ steps:
       - gcr.io/${PROJECT_ID}/demo-db:${COMMIT_SHA}-${TAG_NAME}
 
   - id: deploy
-    dir: ci-cd
+    dir: hello-cloudbuild
     name: cloudnatived/helm-cloudbuilder
     env:
       - KUBECONFIG=/workspace/.kube/config
