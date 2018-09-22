@@ -20,7 +20,6 @@ steps:
       - add-tag
       - gcr.io/${PROJECT_ID}/demo:${COMMIT_SHA}
       - gcr.io/${PROJECT_ID}/demo:${TAG_NAME}
-      - gcr.io/${PROJECT_ID}/demo-db:${COMMIT_SHA}-${TAG_NAME}
 
   - id: deploy
     dir: hello-cloudbuild
