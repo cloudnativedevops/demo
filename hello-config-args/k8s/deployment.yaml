@@ -15,7 +15,9 @@ spec:
       containers:
         - name:  demo
           image: cloudnatived/demo:hello-config-args
-          command: [ "/bin/demo", "-greeting", "$(GREETING)" ]
+          args:
+            - "-greeting"
+            - "$(GREETING)"
           ports:
             - containerPort: 8888
           env:
