@@ -29,27 +29,35 @@ The book aims to teach you everything you need to know to deploy, run, and scale
 Almost all the example code involves our 'hello world' demo application. Here is the list of examples; follow the links to see the documentation on each example.
 
 * [Build and run the demo application locally](/hello)
-* Build a container image for the application
-* Deploy the app to Kubernetes using YAML manifests
-* Deploy the app with Helm
-* Manage the app with Helmfile
-* Set up a namespace, resource requests, and limits for the app
-* Add config data to the app's environment
-* Pass config data to the app's command line
-* Mount a config file in the container at runtime
-* Add secret data to the app's environment
-* Mount a secrets file in the container
-* Store encrypted secrets in the app repo, decrypted automatically on deploy
-* Develop the app locally with Skaffold
-* Build and deploy the app automatically with Drone
-* Build and deploy the app automatically with Google Cloud Build
+* [Deploy the app to Kubernetes using YAML manifests](/hello-k8s)
+* [Deploy the app with Helm](/hello-helm)
+* [Manage the app with Helmfile](/hello-helmfile)
+* [Set up a namespace, resource requests, and limits for the app](/hello-namespace)
+* [Add config data to the app's environment](/hello-config-env)
+* [Pass config data to the app's command line](/hello-config-args)
+* [Mount a config file in the container at runtime](/hello-config-file)
+* [Add secret data to the app's environment](/hello-secret-env)
+* [Mount a secrets file in the container](/hello-secret-file)
+* [Store encrypted secrets in the app repo, decrypted automatically on deploy](/hello-sops)
+* [Develop the app locally with Skaffold](/hello-skaffold)
+* [Build and deploy the app automatically with Drone](/hello-drone)
+* [Build and deploy the app automatically with Google Cloud Build](/hello-cloudbuild)
 
-We also include some Terraform code examples, for both Amazon AWS and Google Cloud, to help you manage cloud resources with code:
+## Terraform examples
 
-* Create a cloud storage bucket in code
-* Create a cloud database instance in code
-* Create a cloud virtual machine instance in code
-* Create a Kubernetes cluster in code
+We also include some Terraform code examples, to help you manage cloud resources with code. Unfortunately we didn't have space to discuss these in the book, but we hope they'll be useful to you anyway.
+
+### Google Cloud
+
+* [Create a cloud storage bucket in code](/terraform/gcp/bucket)
+* [Create a cloud database instance in code](/terraform/gcp/database)
+* [Create a Kubernetes cluster in code](/terraform/gcp/k8scluster)
+
+### Amazon AWS
+
+* [Create a cloud storage bucket in code](/terraform/aws/bucket)
+* [Create a cloud database instance in code](/terraform/aws/database)
+* [Create a cloud virtual machine instance in code](/terraform/aws/vm)
 
 ## You will need
 
@@ -59,3 +67,7 @@ To build and run all of these examples, you will need:
 * Docker version 18.03 or above
 
 Where you need other tools for specific examples, we'll mention that in the README for the example.
+
+## Contributing to the repo
+
+We would absolutely love it if you contributed! Feel free to send us a PR to add new examples, add versions of the examples for different cloud providers (for example Microsoft Azure), or fix or improve the existing examples.
