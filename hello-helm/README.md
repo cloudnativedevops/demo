@@ -90,6 +90,9 @@ demo-dev-6c96484c48-69vss  0/1    ContainerCreating  0         0s
 
 You can see that Helm has created a Deployment resource (which starts a Pod) and a Service, just as in the previous example. The `helm install` does this by creating a Kubernetes object called a Helm _release_.
 
+Now you can go on to the next section: [Manage the app with Helmfile](/hello-helmfile).
+
+
 ## What's this?
 
 This is a code example from the book 'Cloud Native DevOps with Kubernetes'. See the [index](/README.md) for more examples.

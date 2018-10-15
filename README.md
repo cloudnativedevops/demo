@@ -28,8 +28,8 @@ The book aims to teach you everything you need to know to deploy, run, and scale
 
 Almost all the example code involves our 'hello world' demo application. Here is the list of examples; follow the links to see the documentation on each example.
 
-* [Build and run the demo application locally](/hello)
-* [Deploy the app to Kubernetes using YAML manifests](/hello-k8s)
+* [Build and run the demo application locally](/hello) (start here!)
+* [Deploy the app to Kubernetes using kubectl](/hello-k8s)
 * [Deploy the app with Helm](/hello-helm)
 * [Manage the app with Helmfile](/hello-helmfile)
 * [Set up a namespace, resource requests, and limits for the app](/hello-namespace)

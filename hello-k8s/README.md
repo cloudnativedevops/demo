@@ -1,4 +1,4 @@
-# Deploy the app to Kubernetes using YAML manifests
+# Deploy the app to Kubernetes using kubectl
 
 To use the full power of Kubernetes as a declarative infrastructure as code system, you can submit YAML manifests to the cluster yourself, using the `kubectl apply` command.
 
@@ -102,6 +102,8 @@ Once you're satisfied that everything is working correctly, run the following co
 ```
 kubectl delete -f k8s/
 ```
+
+Now you can go on to the next section: [Deploy the app with Helm](/hello-helm).
 
 ## What's this?
 

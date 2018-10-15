@@ -34,7 +34,7 @@ One of the key benefits of containers is the ability to build on existing images
 
 In general, a Dockerfile has instructions for taking a starting image (a so-called _base image_), transforming it in some way, and saving the result as a new image.
 
-### Understanding Dockerfiles
+## Understanding Dockerfiles
 
 Let's see the [Dockerfile](Dockerfile) for our demo application:
 
@@ -50,11 +50,32 @@ COPY --from=build /bin/demo /bin/demo
 ENTRYPOINT ["/bin/demo"]
 ```
 
-The exact details of how this works don't matter for now, but it uses a fairly standard build process for Go containers called _multi-stage builds_. The first stage starts from an official `golang` container image, which is just an operating system (in this case Alpine Linux)(((Alpine Linux))) with the Go language environment installed. It runs the `go build` command to compile the `main.go` file we saw earlier.
+The exact details of how this works don't matter for now, but it uses a fairly standard build process for Go containers called _multi-stage builds_. The first stage starts from an official `golang` container image, which is just an operating system (in this case Alpine Linux) with the Go language environment installed. It runs the `go build` command to compile the `main.go` file we saw earlier.
 
 The result of this is an executable binary file named `demo`. The second stage takes a completely empty container image (called a _scratch_ image, as in 'from scratch') and copies the `demo` binary into it.
 
-### Running 'docker image build'
+## Installing Docker Desktop
+
+Docker Desktop is a complete Kubernetes development environment that runs on your laptop (or desktop). It includes a single-node Kubernetes cluster that you can use to test your applications.
+
+Let's install Docker Desktop now and use it to run a simple containerized application. If you already have Docker installed, skip this section.
+
+Download a version of the Docker Desktop Community Edition suitable for your computer here:
+
+https://store.docker.com/search?type=edition&offering=community
+
+Follow the instructions for your platform to install Docker and start it up. Once you've done that, you should be able to open a terminal and run the following command:
+
+```
+docker version
+Client:
+ Version:      18.03.1-ce
+ ...
+```
+
+The exact output will be different depending on your platform, but if Docker is correctly installed and running, you'll see something like the example output shown. On Linux systems you may need to run `sudo docker version` instead.
+
+## Running 'docker image build'
 
 We've seen that the Dockerfile contains instructions for the `docker image build` tool to turn our Go source code into an executable container. Let's go ahead and try it. In this directory, run the following command:
 
@@ -69,7 +90,7 @@ Successfully tagged myhello:latest
 
 Congratulations, you just built your first container! You can see from the output that Docker performs each of the actions in the Dockerfile in sequence on the newly-formed container, resulting in an image that's ready to use.
 
-### Naming your images
+## Naming your images
 
 When you build an image, by default it just gets a hexadecimal ID, which you can use to refer to it later (for example, to run it). These IDs aren't particularly memorable or easy to type, so Docker allows you to give the image a human-readable name, using the `-t` switch to `docker image build`. In the previous example you named the image `myhello`, so you should be able to use that name to run the image now.
 
@@ -92,6 +113,8 @@ If you're feeling adventurous, modify the `main.go` file in the demo application
 Congratulations, you're now a Go programmer! But don't stop there: take the interactive Tour of Go to learn more:
 
 https://tour.golang.org/welcome/1
+
+Now you can go on to the next section: [Deploy the app to Kubernetes using kubectl](/hello-k8s).
 
 ## What's this?
 
