@@ -1,4 +1,4 @@
-environment: development
+phase: development
 container:
   name: demo
   port: 8888

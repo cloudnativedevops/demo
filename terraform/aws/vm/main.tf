@@ -5,8 +5,8 @@ resource "aws_instance" "vm" {
   instance_type = "t2.micro"
 
   tags {
-    App        = "${var.name}"
-    Environent = "${var.environment}"
-    Name       = "${var.environment}-${var.name}"
+    App   = "${var.name}"
+    Phase = "${var.phase}"
+    Name  = "${var.phase}-${var.name}"
   }
 }

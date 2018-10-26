@@ -9,7 +9,7 @@ resource "aws_rds_cluster" "db" {
   skip_final_snapshot = true
 
   tags {
-    App         = "${var.name}"
-    Environment = "${var.environment}"
+    App   = "${var.name}"
+    Phase = "${var.phase}"
   }
 }

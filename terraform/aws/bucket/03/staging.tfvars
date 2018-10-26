@@ -1,1 +1,1 @@
-environment = "staging"
+phase = "staging"

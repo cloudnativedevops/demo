@@ -8,7 +8,7 @@ spec:
     metadata:
       labels:
         app: {{ .Values.container.name }}
-        environment: {{ .Values.environment }}
+        phase: {{ .Values.phase }}
     spec:
       containers:
         - name: {{ .Values.container.name }}

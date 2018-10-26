@@ -1,4 +1,4 @@
-environment: development
+phase: development
 image:
   repository: demo
   tag: hello
