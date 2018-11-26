@@ -2,6 +2,6 @@ variable "name" {
   default = "demo"
 }
 
-variable "phase" {
+variable "environment" {
   default = "test"
 }

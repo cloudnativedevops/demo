@@ -1,11 +1,11 @@
 provider "aws" {}
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = "${var.phase}-${var.your_name}-cloudnativedevops-${var.name}-bucket"
+  bucket = "${var.environment}-${var.your_name}-cloudnativedevops-${var.name}-bucket"
   acl    = "private"
 
   tags {
-    App   = "${var.name}"
-    Phase = "${var.phase}"
+    App         = "${var.name}"
+    environment = "${var.environment}"
   }
 }

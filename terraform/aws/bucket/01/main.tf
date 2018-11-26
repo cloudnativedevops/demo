@@ -5,7 +5,7 @@ resource "aws_s3_bucket" "bucket" {
   acl    = "private"
 
   tags {
-    App   = "demo"
-    Phase = "test"
+    App         = "demo"
+    environment = "test"
   }
 }

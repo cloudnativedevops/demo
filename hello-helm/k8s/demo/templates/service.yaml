@@ -6,9 +6,9 @@ metadata:
     app: {{ .Values.container.name }}
 spec:
   ports:
-  - port: {{ .Values.container.port }}
+  - port: 80
     protocol: TCP
     targetPort: {{ .Values.container.port }}
   selector:
     app: {{ .Values.container.name }}
-  type: ClusterIP
+  type: LoadBalancer
