@@ -88,7 +88,7 @@ Go ahead and apply the manifest now, to create the Service:
 kubectl apply -f k8s/service.yaml
 service "demo" created
 
-kubectl port-forward service/demo 9999:8888
+kubectl port-forward service/demo 9999:9999
 Forwarding from 127.0.0.1:9999 -> 8888
 Forwarding from [::1]:9999 -> 8888
 ```
