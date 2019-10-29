@@ -71,3 +71,17 @@ Where you need other tools for specific examples, we'll mention that in the READ
 ## Contributing to the repo
 
 We would absolutely love it if you contributed! Feel free to send us a PR to add new examples, add versions of the examples for different cloud providers (for example Microsoft Azure), or fix or improve the existing examples.
+
+## Known Issues
+
+### apiVersion
+
+When we released the book most k8s clusters still used `extensions/v1beta1` for Deployments. On newer versions of k8s `Deployment` has been moved to `apiVersion: apps/v1`. If you get the message:
+
+```
+error: unable to recognize "k8s/deployment.yaml": no matches for kind "Deployment" in version "extensions/v1beta1"
+```
+
+when trying out the examples then try updating `apiVersion: extensions/v1beta1` to `apiVersion: extensions/v1beta1` in your `deployment.yaml` file(s).
+
+Thanks to @thescott for pointing this out.
