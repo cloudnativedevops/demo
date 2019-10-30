@@ -7,7 +7,7 @@ To use the full power of Kubernetes as a declarative infrastructure as code syst
 Here's the Deployment manifest for our demo app:
 
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: demo
