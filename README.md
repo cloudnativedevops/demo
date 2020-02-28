@@ -82,6 +82,6 @@ When we released the book most k8s clusters still used `extensions/v1beta1` for 
 error: unable to recognize "k8s/deployment.yaml": no matches for kind "Deployment" in version "extensions/v1beta1"
 ```
 
-when trying out the examples then try updating `apiVersion: extensions/v1beta1` to `apiVersion: extensions/v1beta1` in your `deployment.yaml` file(s).
+when trying out the examples then try updating `apiVersion: extensions/v1beta1` to `apiVersion: apps/v1` in your `deployment.yaml` file(s).
 
 Thanks to @thescott for pointing this out.
