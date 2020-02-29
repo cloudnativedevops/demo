@@ -39,7 +39,7 @@ In general, a Dockerfile has instructions for taking a starting image (a so-call
 Let's see the [Dockerfile](Dockerfile) for our demo application:
 
 ```dockerfile
-FROM golang:1.11-alpine AS build
+FROM golang:1.14-alpine AS build
 
 WORKDIR /src/
 COPY main.go go.* /src/
@@ -82,7 +82,7 @@ We've seen that the Dockerfile contains instructions for the `docker image build
 ```bash
 docker image build -t myhello .
 Sending build context to Docker daemon  4.096kB
-Step 1/7 : FROM golang:1.11-alpine AS build
+Step 1/7 : FROM golang:1.14-alpine AS build
 ...
 Successfully built eeb7d1c2e2b7
 Successfully tagged myhello:latest

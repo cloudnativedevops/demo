@@ -63,7 +63,7 @@ We also include some Terraform code examples, to help you manage cloud resources
 
 To build and run all of these examples, you will need:
 
-* Go version 1.11 or above
+* Go (any recent version is fine)
 * Docker version 18.03 or above
 
 Where you need other tools for specific examples, we'll mention that in the README for the example.
