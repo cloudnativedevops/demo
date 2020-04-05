@@ -1,0 +1,4 @@
+name: demo
+sources:
+- https://github.com/cloudnativedevops/cloudnatived
+version: 1.0.1
