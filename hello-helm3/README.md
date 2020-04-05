@@ -25,7 +25,6 @@ https://helm.sh/docs/intro/install/
 Once you have Helm installed, you will need to create some Kubernetes resources to authorize it for access to your cluster.
 
 
-Once this command succeeds, you're ready to start using Helm.
 
 ## Installing a Helm chart
 
