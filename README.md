@@ -90,7 +90,7 @@ Thanks to @thescott for pointing this out.
 
 At the time of publishing Helm 3 was not yet released and we included the Helm 2 examples that included the additional steps of installing `tiller`.
 
-Helm3 is now released and `tiller` is no longer required.
+Helm 3 is now released and `tiller` is no longer required.
 
 We have added the `hello-helm3` examples here with updated instructions if you would like to use the latest version of Helm.
 
