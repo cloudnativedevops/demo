@@ -30,7 +30,7 @@ Almost all the example code involves our 'hello world' demo application. Here is
 
 * [Build and run the demo application locally](/hello) (start here!)
 * [Deploy the app to Kubernetes using kubectl](/hello-k8s)
-* [Deploy the app with Helm](/hello-helm) (or [using Helm3)](/hello-help3)
+* [Deploy the app with Helm](/hello-helm) (or [with Helm 3)](/hello-helm3)
 * [Manage the app with Helmfile](/hello-helmfile)
 * [Set up a namespace, resource requests, and limits for the app](/hello-namespace)
 * [Add config data to the app's environment](/hello-config-env)
