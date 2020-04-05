@@ -30,7 +30,7 @@ Almost all the example code involves our 'hello world' demo application. Here is
 
 * [Build and run the demo application locally](/hello) (start here!)
 * [Deploy the app to Kubernetes using kubectl](/hello-k8s)
-* [Deploy the app with Helm](/hello-helm)
+* [Deploy the app with Helm](/hello-helm) (or [using Helm3)](/hello-help3)
 * [Manage the app with Helmfile](/hello-helmfile)
 * [Set up a namespace, resource requests, and limits for the app](/hello-namespace)
 * [Add config data to the app's environment](/hello-config-env)
@@ -85,3 +85,13 @@ error: unable to recognize "k8s/deployment.yaml": no matches for kind "Deploymen
 when trying out the examples then try updating `apiVersion: extensions/v1beta1` to `apiVersion: apps/v1` in your `deployment.yaml` file(s).
 
 Thanks to @thescott for pointing this out.
+
+### Helm 3
+
+At the time of publishing Helm 3 was not yet released and we included the Helm 2 examples that included the additional steps of installing `tiller`.
+
+Helm3 is now released and `tiller` is no longer required.
+
+We have added the `hello-helm3` examples here with updated instructions if you would like to use the latest version of Helm.
+
+You can read more about the changes between version 2 and 3 [here](https://v3.helm.sh/docs/faq/#changes-since-helm-2).
