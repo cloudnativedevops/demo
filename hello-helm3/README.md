@@ -1,4 +1,4 @@
-# Deploy the app with Helm (3)
+# Deploy the app with Helm 3
 
 If you've worked your way through the [hello-k8s](/hello-k8s) example, you now know everything you need to know to deploy applications to Kubernetes clusters using declarative YAML manifests. But there's a lot of repetition in these files: for example, you've repeated the name `demo`, the label selector `app: demo`, and the port `8888` several times.
 
