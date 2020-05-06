@@ -106,6 +106,6 @@ Later we discuss why using the declarative `kubectl apply -f...` is preferred ov
 
 In our `kubectl run` example we show the output as `deployment.apps "demo" created` but on version 1.18 instead you will instead see `pod/demo created`.
 
-The following port-forward example would instead be: `kubectl port-forward pod/demo 9999:8888`
+The subsequent port-forward example would instead be: `kubectl port-forward pod/demo 9999:8888`
 
 Again, using `kubectl apply -f...` and keeping your manifests tracked in source control is a better long-term solution.
