@@ -102,7 +102,7 @@ In the 1.18 release of Kubernetes the `kubectl run` command changed from creatin
 
 We have a few examples where we use `kubectl run` to get familiar with running a container in k8s.
 
-Later we to discuss why using the declarative `kubectl apply -f...` is preferred rather than using commands like `create`, `edit` or `run` directly because those changes are not captured in source control.
+Later we discuss why using the declarative `kubectl apply -f...` is preferred over the imperative `create`, `edit` or `run`, because your version-controlled YAML files always reflect the real state of the cluster.
 
 In our `kubectl run` example we show the output as `deployment.apps "demo" created` but on version 1.18 instead you will instead see `pod/demo created`.
 
