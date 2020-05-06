@@ -95,3 +95,17 @@ Helm 3 is now released and `tiller` is no longer required.
 We have added the `hello-helm3` examples here with updated instructions if you would like to use the latest version of Helm.
 
 You can read more about the changes between version 2 and 3 [here](https://v3.helm.sh/docs/faq/#changes-since-helm-2).
+
+### `kubectl run` and Pod/Deployment v1.18 change
+
+In the 1.18 release of Kubernetes the `kubectl run` command changed from creating a `Deployment` by default to creating a `Pod` instead.
+
+We have a few examples where we use `kubectl run` to get familiar with running a container in k8s.
+
+Later we discuss why using the declarative `kubectl apply -f...` is preferred over the imperative `create`, `edit` or `run`, because your version-controlled YAML files always reflect the real state of the cluster.
+
+In our `kubectl run` example we show the output as `deployment.apps "demo" created` but on version 1.18 instead you will instead see `pod/demo created`.
+
+The subsequent port-forward example would instead be: `kubectl port-forward pod/demo 9999:8888`
+
+Again, using `kubectl apply -f...` and keeping your manifests tracked in source control is a better long-term solution.
