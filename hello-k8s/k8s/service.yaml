@@ -5,6 +5,7 @@ metadata:
   labels:
     app: demo
 spec:
+  # NOTE: depending on which version of the book you have, this may say port 9999. The latest version of the book uses 8888 to match the pod.
   ports:
   - port: 8888
     protocol: TCP
