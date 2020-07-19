@@ -109,3 +109,7 @@ In our `kubectl run` example we show the output as `deployment.apps "demo" creat
 The subsequent port-forward example would instead be: `kubectl port-forward pod/demo 9999:8888`
 
 Again, using `kubectl apply -f...` and keeping your manifests tracked in source control is a better long-term solution.
+
+### Service port 8888 VS 9999
+
+Depending on which version of the book you read you may see reference to using port `9999` for the service port [here](https://github.com/cloudnativedevops/demo/blob/master/hello-k8s/k8s/service.yaml). This caused some confusion between the pod port, service port, and the port-forwarding port in the examples, so was changed in the latest revision to use `8888` for both the pod and the serivce. Thanks to @randoljt for catching this and sorry for any confusion.
