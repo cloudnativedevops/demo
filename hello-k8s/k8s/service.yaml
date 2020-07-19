@@ -6,7 +6,7 @@ metadata:
     app: demo
 spec:
   ports:
-  - port: 8888
+  - port: 9999
     protocol: TCP
     targetPort: 8888
   selector:
