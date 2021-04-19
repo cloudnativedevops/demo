@@ -27,7 +27,6 @@ steps:
     env:
       - KUBECONFIG=/workspace/.kube/config
     args:
-      - helm
       - upgrade
       - --install
       - ${TAG_NAME}-demo
