@@ -1,0 +1,17 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo
+  template:
+    spec:
+      containers:
+        - name: demo
+          image: cloudnatived/demo:hello
+          ports:
+            - containerPort: 8888

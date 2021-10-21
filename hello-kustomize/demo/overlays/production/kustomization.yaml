@@ -1,0 +1,5 @@
+resources:
+  - ../../base
+namePrefix: prod-
+patchesStrategicMerge:
+  - replicas.yaml

@@ -1,0 +1,8 @@
+commonLabels:
+  app: demo
+  org: acmeCorporation
+resources:
+  - deployment.yaml
+  - service.yaml
+patchesStrategicMerge:
+  - replicas.yaml
