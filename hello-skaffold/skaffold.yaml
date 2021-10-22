@@ -1,15 +1,13 @@
-apiVersion: skaffold/v1alpha2
+apiVersion: skaffold/v2beta24
 kind: Config
 build:
-  tagPolicy:
-    sha256: {}
   artifacts:
-  - imageName: demo
+    - image: skaffold-demo
 deploy:
   helm:
     releases:
-    - name: demo
-      chartPath: ./k8s/demo
-      namespace: demo
-      values:
-         image: demo
+      - name: demo
+        chartPath: ./k8s/demo
+        namespace: demo
+        artifactOverrides:
+          image: skaffold-demo
