@@ -4,7 +4,7 @@ steps:
     name: gcr.io/cloud-builders/kubectl
     env:
       - CLOUDSDK_CORE_PROJECT=$PROJECT_ID
-      - CLOUDSDK_COMPUTE_REGION=${_LOCATION}
+      - CLOUDSDK_COMPUTE_REGION=${_REGION}
       - CLOUDSDK_CONTAINER_CLUSTER=${_CLOUDSDK_CONTAINER_CLUSTER}
       - KUBECONFIG=/workspace/.kube/config
     args:
@@ -25,7 +25,7 @@ steps:
       - --values
       - k8s/demo/${TAG_NAME}-values.yaml
       - --set
-      - container.image=${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}
+      - container.image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/demo
       - --set
       - container.tag=${COMMIT_SHA}
       - ./k8s/demo

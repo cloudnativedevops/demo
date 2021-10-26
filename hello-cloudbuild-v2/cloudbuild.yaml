@@ -21,11 +21,13 @@ steps:
   - id: build-app
     dir: hello-cloudbuild
     name: gcr.io/cloud-builders/docker
-    entrypoint: bash
     args:
-      - -c
-      - |
-        docker image build --tag ${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:${COMMIT_SHA} .
+      - docker
+      - image
+      - build
+      - --tag
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/demo:${COMMIT_SHA}
+      - .
 
   - id: kubeval
     dir: hello-cloudbuild
@@ -37,4 +39,4 @@ steps:
         helm template ./k8s/demo/ | kubeval
 
 images:
-  - ${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:${COMMIT_SHA}
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/demo:${COMMIT_SHA}
