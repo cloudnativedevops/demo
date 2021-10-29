@@ -26,7 +26,7 @@ steps:
       - image
       - build
       - --tag
-      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/demo:${COMMIT_SHA}
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/demo/demo:$COMMIT_SHA
       - .
 
   - id: kubeval
@@ -39,4 +39,4 @@ steps:
         helm template ./k8s/demo/ | kubeval
 
 images:
-  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/demo:${COMMIT_SHA}
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/demo/demo:$COMMIT_SHA

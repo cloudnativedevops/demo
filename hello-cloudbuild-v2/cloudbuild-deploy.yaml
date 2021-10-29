@@ -25,7 +25,7 @@ steps:
       - --values
       - k8s/demo/${TAG_NAME}-values.yaml
       - --set
-      - container.image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/demo
+      - container.image=${_REGION}-docker.pkg.dev/$PROJECT_ID/demo/demo
       - --set
       - container.tag=${COMMIT_SHA}
       - ./k8s/demo
