@@ -1,7 +1,7 @@
 steps:
   # build only the first stage, so we can run tests with it
   - id: build-test-image
-    dir: hello-cloudbuild
+    dir: hello-cloudbuild-v2
     name: gcr.io/cloud-builders/docker
     entrypoint: bash
     args:
@@ -10,7 +10,7 @@ steps:
         docker image build --target build --tag demo:test .
 
   - id: run-tests
-    dir: hello-cloudbuild
+    dir: hello-cloudbuild-v2
     name: gcr.io/cloud-builders/docker
     entrypoint: bash
     args:
@@ -19,7 +19,7 @@ steps:
         docker container run demo:test go test
 
   - id: build-app
-    dir: hello-cloudbuild
+    dir: hello-cloudbuild-v2
     name: gcr.io/cloud-builders/docker
     args:
       - docker
@@ -30,7 +30,7 @@ steps:
       - .
 
   - id: kubeval
-    dir: hello-cloudbuild
+    dir: hello-cloudbuild-v2
     name: cloudnatived/helm-cloudbuilder
     entrypoint: sh
     args:
