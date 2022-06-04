@@ -18,6 +18,7 @@ steps:
       - container
       - images
       - add-tag
+      - --quiet
       - gcr.io/${PROJECT_ID}/demo:${COMMIT_SHA}
       - gcr.io/${PROJECT_ID}/demo:${TAG_NAME}
 
