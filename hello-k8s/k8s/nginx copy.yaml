@@ -10,4 +10,5 @@ spec:
   - name: nginx1
     image: nginx
     imagePullPolicy: IfNotPresent
-    
+  nodeSelector:
+    disktype: ssd
