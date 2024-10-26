@@ -45,7 +45,7 @@ kubectl delete all --selector app=demo
 Then run the following command:
 
 ```
-helm install --name demo ./k8s/demo
+helm install demo ./k8s/demo
 NAME:   demo
 LAST DEPLOYED: Wed Jun  6 10:48:50 2018
 NAMESPACE: default
